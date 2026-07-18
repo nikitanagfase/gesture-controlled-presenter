@@ -10,9 +10,16 @@ once every `cooldown_seconds`, not once per frame.
 
 import time
 import platform
+
 import pyautogui
 
-pyautogui.FAILSAFE = True  # move mouse to a screen corner to abort, as a safety net
+try:
+    import pyautogui
+    pyautogui.FAILSAFE = True  # move mouse to a screen corner to abort, as a safety net
+    PYAUTOGUI_AVAILABLE = True
+except Exception:
+    PYAUTOGUI_AVAILABLE = False
+
 
 
 class ActionController:

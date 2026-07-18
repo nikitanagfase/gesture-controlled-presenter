@@ -221,9 +221,9 @@ def run_camera_loop(config, cooldown, hold_frames, pointer_mode,
 
     cap = cv2.VideoCapture(config.get("camera_index", 0))
     if not cap.isOpened():
-        st.error("Could not access the webcam. Check camera permissions / index.")
-        st.session_state.running = False
-        return
+    st.warning("⚠️ Camera not available in this cloud environment. This app is designed to run locally with a webcam — clone the repo and run `streamlit run app.py` on your machine to try it live. See the demo video below.")
+    st.session_state.running = False
+    return
 
     prev_time = time.time()
 
