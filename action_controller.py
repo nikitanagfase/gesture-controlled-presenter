@@ -11,15 +11,12 @@ once every `cooldown_seconds`, not once per frame.
 import time
 import platform
 
-import pyautogui
-
 try:
     import pyautogui
     pyautogui.FAILSAFE = True  # move mouse to a screen corner to abort, as a safety net
     PYAUTOGUI_AVAILABLE = True
 except Exception:
     PYAUTOGUI_AVAILABLE = False
-
 
 
 class ActionController:
@@ -43,11 +40,14 @@ class ActionController:
         """
         Executes the keyboard action mapped to `gesture_name`, respecting
         the cooldown. Returns the action name that fired, or None if
-        nothing happened (unknown gesture, or still cooling down).
+        nothing happened (unknown gesture, still cooling down, or
+        pyautogui isn't available in this environment).
         """
         if gesture_name in ("none", "unknown", "index_only"):
             return None
         if gesture_name not in self.gestures_cfg:
+            return None
+        if not PYAUTOGUI_AVAILABLE:
             return None
 
         now = time.time()
@@ -77,7 +77,10 @@ class ActionController:
         Laser Pointer Mode: moves the REAL system mouse cursor to a
         normalized (0-1, 0-1) position on screen, based on fingertip
         location. Used when the user shows only their index finger.
+        Silently does nothing if pyautogui isn't available (e.g. cloud deploy).
         """
+        if not PYAUTOGUI_AVAILABLE:
+            return
         screen_w, screen_h = pyautogui.size()
         x = int(max(0, min(x_norm, 1)) * screen_w)
         y = int(max(0, min(y_norm, 1)) * screen_h)
