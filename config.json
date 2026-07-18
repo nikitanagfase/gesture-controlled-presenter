@@ -1,0 +1,34 @@
+{
+  "camera_index": 0,
+  "cooldown_seconds": 1.0,
+  "hold_frames": 8,
+  "min_detection_confidence": 0.6,
+  "platform_override": null,
+  "gestures": {
+    "open_palm":    { "label": "Open Palm",      "action": "next_slide" },
+    "three_fingers":{ "label": "Three Fingers",  "action": "previous_slide" },
+    "two_fingers":  { "label": "Two Fingers",    "action": "start_slideshow" },
+    "fist":         { "label": "Fist",           "action": "exit_slideshow" },
+    "index_only":   { "label": "Index Finger",   "action": "pointer_mode" }
+  },
+  "key_mappings": {
+    "windows": {
+      "next_slide": ["right"],
+      "previous_slide": ["left"],
+      "start_slideshow": ["f5"],
+      "exit_slideshow": ["esc"]
+    },
+    "mac": {
+      "next_slide": ["right"],
+      "previous_slide": ["left"],
+      "start_slideshow": ["command", "enter"],
+      "exit_slideshow": ["esc"]
+    },
+    "linux": {
+      "next_slide": ["right"],
+      "previous_slide": ["left"],
+      "start_slideshow": ["f5"],
+      "exit_slideshow": ["esc"]
+    }
+  }
+}
