@@ -8,17 +8,24 @@ Run with:
 """
 
 import json
+import os
+import subprocess
 import time
 import collections
 
 import cv2
 import streamlit as st
 
+st.set_page_config(page_title="Gesture Control Presenter", page_icon="🖐️", layout="wide")
+
+MODEL_PATH = os.path.join("models", "hand_landmarker.task")
+if not os.path.exists(MODEL_PATH):
+    with st.spinner("First-time setup: downloading hand detection model..."):
+        subprocess.run(["python", "setup_models.py"], check=True)
+
 from hand_detector import HandDetector
 from gesture_classifier import GestureClassifier
 from action_controller import ActionController
-
-st.set_page_config(page_title="Gesture Control Presenter", page_icon="🖐️", layout="wide")
 
 GESTURE_EMOJI = {
     "open_palm": "✋",
@@ -311,4 +318,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main()  
