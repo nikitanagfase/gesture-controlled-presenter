@@ -75,10 +75,7 @@ gesture-slides/
 ├── requirements.txt
 ├── .gitignore
 ├── README.md
-├── models/
-│   └── hand_landmarker.task    # (downloaded, not uploaded to git)
-└── assets/
-    └── demo.gif                # optional demo for README
+
 ```
 
 ## 6. System Workflow
