@@ -71,7 +71,7 @@ class GestureClassifier:
 
         return [thumb_up] + others_up
 
-    # ---------- classification ----------
+    # classification 
 
     def classify_frame(self, landmarks):
         """Classifies a single frame. Returns 'none' or 'unknown' if not confident."""
