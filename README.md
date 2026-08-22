@@ -4,7 +4,7 @@
 Nikita Nagfase
 
 ## Affiliation
-Department Of MCA | Suryodaya College Of Engineering and  technology
+Department Of MCA | Suryodaya College Of Engineering and  technology ,Nagpur 
 
 ## Abstract
 Gesture Control Presenter is a computer-vision-based application designed to enable hands-free control of digital slide presentations (Google Slides) using real-time hand gesture recognition. The system captures live webcam input, detects hand landmarks using MediaPipe, classifies the gesture, and maps it to a corresponding keyboard action using PyAutoGUI.
