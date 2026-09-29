@@ -101,7 +101,7 @@ gesture-slides/
 ## 8. Installation
 
 ```bash
-git clone https://github.com/<your-username>/gesture-slides.git
+git clone https://github.com/nikitanagfase/gesture-controlled-presenter.git
 cd gesture-slides
 pip install -r requirements.txt
 python setup_models.py
